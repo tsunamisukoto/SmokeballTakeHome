@@ -83,7 +83,7 @@ partial class Program
 
     private static async Task<GoogleResponseModel?> GetResultsPageForQuery(string query, int page)
     {
-        string apiKey = ""; // Note: in a proper system this would come from a keystore or something I have provided Eileen with the api key I used for this piece.
+        string apiKey = ""; // KEY GOES HERE. Note: in a proper system this would come from a keystore or something I have provided Eileen with the api key I used for this piece. COULD have also made it a command line arg but wasnt sure what would be best.
         string cx = "f7c4264cb7f034af1"; // Same with this. This is just a simple key I set up for this demo, it would be stored in a store or whatever.
         string uri = $"https://www.googleapis.com/customsearch/v1?key={apiKey}&cx={cx}&q={HttpUtility.UrlEncode(query)}&start={page * GOOGLE_API_RESPONSE_PAGE_SIZE}";
         HttpResponseMessage response = await client.GetAsync(uri);
